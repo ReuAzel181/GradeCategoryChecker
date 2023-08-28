@@ -1,0 +1,33 @@
+def grades():
+    while True:
+
+        try:
+            grade_input = input("What is your grade? ")
+            grade = float(grade_input)
+        except ValueError:
+            print("Invalid Grade")
+
+        if grade > 100 or grade <= 60:
+            print("Invalid Grade!")
+        elif grade >= 97.5:
+            print("With highest honor")
+        elif grade >= 94.5:
+            print("With high honor")
+        elif grade >= 89.5:
+            print("With honor")
+        elif grade >= 74.5:
+            print("You Passed")
+        else:
+            print("Failed")
+
+        try:
+            ask = input("Do you want to continue? Press 'Y' if YES and 'N' if NO: ").lower()
+            if ask == "n":
+                break
+            elif ask != "y":
+                raise ValueError("Invalid input")
+        except ValueError:
+            print("Invalid input. Exiting...")
+            break
+
+grades()
